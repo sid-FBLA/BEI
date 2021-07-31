@@ -1,5 +1,6 @@
 /* #0b5ed7 + #0a58ca + #0a53be --> #ab4ccc
    rgba(49 132 253 / 50%) --> rgba(171, 76, 204, 0.5) = #ab4ccc with 50% opacity
+   0 0 0 0.25rem rgba(13 110 253 / 25%) --> 0 0 0 0.25rem rgba(74, 12, 132, 0.25) = #4a0c84 with 50% opacity
 */
 
 * {
@@ -9,7 +10,53 @@ body {
     background-color: #FFFFFF;
 }
 
+.text-purple {
+  color: #691392;
+}
+
 /*Navbar*/
+.navbar {
+  background-color: transparent !important;
+}
+/*Cover*/
+.cover-container {
+  background: linear-gradient(105deg, #f3e4f4, #FDFBFD, #FCF9FC, #ffffff);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: calc(100vh);
+}
+
+.form-holder {
+  left: 0;
+  right: 0;
+  top: 75%;
+}
+
+.form-holder .form-control{
+  padding: 1.5rem 8rem 1.5rem 1rem;
+  border: none;
+  border-radius: 9999px;
+
+}
+
+.form-holder .form-holder-shadow {
+  border-radius: 9999px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0px 10px 15px 5px rgba(224, 188, 228, 0.2);
+}
+
+.form-holder .pulse-wrap {
+  top: 0.5rem;
+  right: 0.5rem
+}
+
+.cover-container .cover-headline {
+  text-align: center;
+}
+
+.cover-container .cover-headline h1 {
+  font-weight: 700;
+}
 
 /* Fancy Button*/
 .btn-primary-important {
@@ -183,4 +230,48 @@ body {
 
 .heading {
   max-width: 700px;
+}
+
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap
+
+Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { }
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .cover-container .form-holder {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /*Cover*/
+  .cover-container .form-holder {
+    /*Override*/
+    margin-left: 0;
+    margin-right: 0;
+    top: 60%;
+    left: 3.5rem;
+    max-width: 350px;
+  }
+
+  .cover-container .cover-headline {
+    max-width: 600px;
+    text-align: left;
+    margin-left: 3.5rem;
+  }
+}
+
+/*X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { ... }
+
+/*XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+  .cover-container .cover-headline {
+    min-width: 750px;
+  }
 }
